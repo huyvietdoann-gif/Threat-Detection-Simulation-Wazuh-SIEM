@@ -7,3 +7,5 @@
 - Evaluate detection rate and visualize security events on the Kibana dashboard.
 # Technologies Used:
 Wazuh 4.x · Elastic Stack · Sysmon · Atomic Red Team · MITRE ATT&CK Framework
+# Architecture
+<img width="1024" height="664" alt="project topo" src="https://github.com/user-attachments/assets/6b3a2d19-2107-44d3-b116-4f8fbbf33cb5" />
