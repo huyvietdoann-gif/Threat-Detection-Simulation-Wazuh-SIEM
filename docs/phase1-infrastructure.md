@@ -10,18 +10,16 @@ This phase covers deploying the Wazuh Server (all-in-one) and preparing all virt
 
 | VM | OS | IP | RAM | CPU | Disk |
 |---|---|---|---|---|---|
-| Wazuh Server | Ubuntu 22.04 LTS | 10.10.0.6 | 4GB | 2 core | 50GB |
-| Windows Agent | Windows 10 | 10.10.0.7 | 4GB | 2 core | 50GB |
-| Linux Agent | Ubuntu 20.04 | 10.10.0.4 | 2GB | 2 core | 30GB |
-| Kali Attacker | Kali Linux | 10.10.0.x | 4GB | 2 core | 40GB |
+| Wazuh Server | Ubuntu 22.04 LTS | 10.0.0.6 | 4GB | 2 core | 50GB |
+| Windows Agent | Windows 10 | 10.0.0.7 | 4GB | 2 core | 50GB |
+| Linux Agent | Ubuntu 20.04 | 10.0.0.4 | 2GB | 2 core | 30GB |
+| Kali Attacker | Kali Linux | 10.0.0.x | 4GB | 2 core | 40GB |
 
 **Network:** Create a single NAT Network `10.10.0.0/24` and attach all VMs to it. Verify connectivity:
 
-```bash
-
 ## 1.2 Install Wazuh Server (All-in-One)
 
-> Performed on: **Ubuntu 22.04 – 10.10.0.6**
+> Performed on: **Ubuntu 22.04 – 10.0.0.6**
 
 ### Step 1 – System update
 
