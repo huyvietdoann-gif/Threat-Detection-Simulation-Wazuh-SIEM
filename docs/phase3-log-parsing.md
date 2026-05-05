@@ -41,7 +41,7 @@ Before writing custom decoders, check if Wazuh already has one for the log type.
 grep -r "Failed password" /var/ossec/ruleset/decoders/
 ```
 
-![Services Status](../screenshots/phase2/image-1.png)
+![Services Status](../screenshots/phase3/image-1.png)
 
 Wazuh has a built-in SSH decoder at `/var/ossec/ruleset/decoders/0310-ssh_decoders.xml`:
 
@@ -76,7 +76,7 @@ On Wazuh Server:
 ```bash
 sudo tail -5 /var/log/auth.log
 ```
-![Services Status](../screenshots/phase2/image-2.png)
+![Services Status](../screenshots/phase3/image-2.png)
 Sample output:
 ```
 May  5 11:33:01 db-server sshd[110445]: Failed password for invalid user wronguser from 10.0.0.3 port 33564 ssh2
@@ -124,7 +124,7 @@ Paste the real log line. Expected output:
 **Alert to be generated.
 ```
 
-![Services Status](../screenshots/phase2/image-3.png)
+![Services Status](../screenshots/phase3/image-3.png)
 
 > Built-in SSH decoder correctly extracts `srcip` and `srcuser` — no custom decoder needed for SSH.
 
@@ -163,7 +163,7 @@ Add the following before the closing tag:
 </decoder>
 ```
 
-![Services Status](../screenshots/phase2/image-4.png)
+![Services Status](../screenshots/phase3/image-4.png)
 
 ### Apply changes
 
