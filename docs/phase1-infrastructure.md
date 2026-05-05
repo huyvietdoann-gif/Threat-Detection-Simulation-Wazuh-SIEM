@@ -94,7 +94,7 @@ sudo systemctl status wazuh-dashboard
 Open a browser and navigate to:
 
 ```
-https://10.10.0.6
+https://10.0.0.6
 Username: admin
 Password: OwSVJ+lplT*1hYwjbJurlmGogBxHuz1h
 ```
