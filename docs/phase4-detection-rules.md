@@ -126,7 +126,7 @@ Trigger when a non-standard user runs sudo commands repeatedly.
 ```xml
 <rule id="100005" level="8" frequency="3" timeframe="60">
   <if_matched_sid>5402</if_matched_sid>
-  <same_source_user />
+  <same_field>srcuser</same_field>
   <description>Multiple sudo executions - Possible Privilege Escalation</description>
   <mitre>
     <id>T1548.003</id>
@@ -199,7 +199,7 @@ Add all rules inside the `<group name="local,">` tag:
   <!-- Rule 100005: Linux Sudo Privilege Escalation -->
   <rule id="100005" level="8" frequency="3" timeframe="60">
     <if_matched_sid>5402</if_matched_sid>
-    <same_source_user />
+    <same_field>srcuser</same_field>
     <description>Multiple sudo executions - Possible Privilege Escalation</description>
     <mitre>
       <id>T1548.003</id>
