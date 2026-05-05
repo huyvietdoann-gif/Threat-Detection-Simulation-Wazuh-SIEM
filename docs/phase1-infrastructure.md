@@ -28,7 +28,7 @@ This phase covers deploying the Wazuh Server (all-in-one) and preparing all virt
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
-![alt text](image.png)
+![Services Status](../screenshots/phase1/image.png)
 ### Step 2 – Download installation files
 
 ```bash
@@ -50,7 +50,7 @@ nodes:
     - name: dashboard
       ip: "10.0.0.6"
 ```
-![alt text](image-1.png)
+![Services Status](../screenshots/phase1/image-1.png)
 ### Step 4 – Run installation
 
 ```bash
@@ -66,8 +66,8 @@ sudo bash wazuh-install.sh --wazuh-server wazuh-1
 # Install Wazuh Dashboard (Kibana)
 sudo bash wazuh-install.sh --wazuh-dashboard dashboard
 ```
-![alt text](image-2.png)
-![alt text](image-3.png)
+![Services Status](../screenshots/phase1/image-2.png)
+![Services Status](../screenshots/phase1/image-3.png)
 
 ### Step 5 – Retrieve admin password
 
@@ -86,9 +86,9 @@ sudo tar -O -xvf wazuh-passwords.tar | grep -P "\'admin\'" -A 1
 sudo systemctl status wazuh-manager
 sudo systemctl status wazuh-indexer
 sudo systemctl status wazuh-dashboard
-![alt text](image-5.png)
-![alt text](image-6.png)
 ```
+![Services Status](../screenshots/phase1/image-5.png)
+![Services Status](../screenshots/phase1/image-6.png)
 ---
 
 ## 1.4 Access Dashboard
@@ -100,7 +100,7 @@ https://10.10.0.6
 Username: admin
 Password: OwSVJ+lplT*1hYwjbJurlmGogBxHuz1h
 ```
-![alt text](image-4.png)
+![Services Status](../screenshots/phase1/image-4.png)
 > Accept the SSL warning (self-signed certificate).
 
 ---
