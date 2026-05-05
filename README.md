@@ -1,4 +1,4 @@
-# 🛡️ Mini SOC Lab – Threat Detection & Simulation with Wazuh SIEM
+# 🛡️SOC Lab – Threat Detection & Simulation with Wazuh SIEM
 
 ![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
 ![SIEM](https://img.shields.io/badge/SIEM-Wazuh%204.7-blue)
@@ -43,13 +43,13 @@ This project builds a small-scale SOC environment designed for hands-on practice
                                │ alerts
                     ┌──────────▼──────────┐
                     │    Wazuh Server     │
-                    │   Ubuntu 22.04      │
-                    │   IP: 10.0.0.6     │
+                    │   Ubuntu Server     │
+                    │   IP: 10.0.0.6      │
                     └───┬─────────────┬───┘
                logs ◄───┘             └───► logs
     ┌──────────────────┐           ┌──────────────────┐
-    │  Windows 10      │           │  Ubuntu 20.04    │
-    │  IP: 10.0.0.7   │           │  IP: 10.0.0.4   │
+    │  Windows 10      │           │      Ubuntu      │
+    │  IP: 10.0.0.7    │           │  IP: 10.0.0.4    │
     │  - Sysmon        │           │  - Wazuh Agent   │
     │  - Wazuh Agent   │           │  - Auditd        │
     │  - Atomic RT     │           │  - Atomic RT     │
@@ -58,7 +58,7 @@ This project builds a small-scale SOC environment designed for hands-on practice
              └──────────────┬───────────────┘
                    ┌────────┴────────┐
                    │  Kali Linux     │
-                   │  IP: 10.0.0.x  │
+                   │  IP: 10.0.0.x   │
                    │  (Attacker)     │
                    └─────────────────┘
 
@@ -81,11 +81,11 @@ Network: 10.0.0.0/24 (Internal Lab Network)
 
 | Phase | Description | Status |
 |---|---|---|
-| [Phase 1 – Infrastructure](docs/phase1-infrastructure.md) | Deploy Wazuh Server, configure VMs | 🔄 In Progress |
-| [Phase 2 – Agent & Log Collection](docs/phase2-agent-log-collection.md) | Install agents, configure log sources | ⏳ Pending |
-| [Phase 3 – Log Parsing](docs/phase3-log-parsing.md) | Write custom decoders | ⏳ Pending |
-| [Phase 4 – Detection Rules](docs/phase4-detection-rules.md) | Write MITRE-mapped detection rules | ⏳ Pending |
-| [Phase 5 – Atomic Simulation](docs/phase5-atomic-simulation.md) | Run Atomic Red Team tests | ⏳ Pending |
+| [Phase 1 – Infrastructure](docs/phase1-infrastructure.md) | Deploy Wazuh Server, configure VMs | Completed |
+| [Phase 2 – Agent & Log Collection](docs/phase2-agent-log-collection.md) | Install agents, configure log sources | Completed |
+| [Phase 3 – Log Parsing](docs/phase3-log-parsing.md) | Write custom decoders | Completed |
+| [Phase 4 – Detection Rules](docs/phase4-detection-rules.md) | Write MITRE-mapped detection rules | Completed |
+| [Phase 5 – Atomic Simulation](docs/phase5-atomic-simulation.md) | Run Atomic Red Team tests | Completed |
 
 ---
 
@@ -108,25 +108,6 @@ mini-soc-lab/
 │   └── (per-phase screenshots)
 └── atomic-tests/
     └── test-results.md
-```
-
----
-
-## 🚀 Quick Start
-
-```bash
-# 1. Clone this repo
-git clone https://github.com/<username>/mini-soc-lab.git
-
-# 2. Follow Phase 1 to set up the infrastructure
-# See: docs/phase1-infrastructure.md
-
-# 3. Deploy Wazuh (all-in-one)
-curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
-curl -sO https://packages.wazuh.com/4.7/config.yml
-sudo bash wazuh-install.sh --wazuh-indexer node-1
-sudo bash wazuh-install.sh --wazuh-server wazuh-1
-sudo bash wazuh-install.sh --wazuh-dashboard dashboard
 ```
 
 ---
