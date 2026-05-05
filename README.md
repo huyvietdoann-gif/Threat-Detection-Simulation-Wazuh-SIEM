@@ -44,12 +44,12 @@ This project builds a small-scale SOC environment designed for hands-on practice
                     ┌──────────▼──────────┐
                     │    Wazuh Server     │
                     │   Ubuntu 22.04      │
-                    │   IP: 10.10.0.6     │
+                    │   IP: 10.0.0.6     │
                     └───┬─────────────┬───┘
                logs ◄───┘             └───► logs
     ┌──────────────────┐           ┌──────────────────┐
     │  Windows 10      │           │  Ubuntu 20.04    │
-    │  IP: 10.10.0.7   │           │  IP: 10.10.0.4   │
+    │  IP: 10.0.0.7   │           │  IP: 10.0.0.4   │
     │  - Sysmon        │           │  - Wazuh Agent   │
     │  - Wazuh Agent   │           │  - Auditd        │
     │  - Atomic RT     │           │  - Atomic RT     │
@@ -58,24 +58,22 @@ This project builds a small-scale SOC environment designed for hands-on practice
              └──────────────┬───────────────┘
                    ┌────────┴────────┐
                    │  Kali Linux     │
-                   │  IP: 10.10.0.x  │
+                   │  IP: 10.0.0.x  │
                    │  (Attacker)     │
                    └─────────────────┘
 
-Network: 10.10.0.0/24 (Internal Lab Network)
+Network: 10.0.0.0/24 (Internal Lab Network)
 ```
-
-
-<img width="1024" height="664" alt="project topo" src="https://github.com/user-attachments/assets/6b3a2d19-2107-44d3-b116-4f8fbbf33cb5" />
+![alt text](image.png)
 
 ### VM Specifications
 
 | VM | OS | IP | RAM | CPU | Role |
 |---|---|---|---|---|---|
-| Wazuh Server | Ubuntu 22.04 LTS | 10.10.0.6 | 4GB | 2 core | SIEM, Indexer, Dashboard |
-| Windows Agent | Windows 10 | 10.10.0.7 | 4GB | 2 core | Endpoint (Sysmon + Atomic RT) |
-| Linux Agent | Ubuntu 20.04 | 10.10.0.4 | 2GB | 2 core | Endpoint (Auditd + Atomic RT) |
-| Kali Attacker | Kali Linux | 10.10.0.x | 4GB | 2 core | Attack simulation |
+| Wazuh Server | Ubuntu 22.04 LTS | 10.0.0.6 | 4GB | 2 core | SIEM, Indexer, Dashboard |
+| Windows Agent | Windows 10 | 10.0.0.7 | 4GB | 2 core | Endpoint (Sysmon + Atomic RT) |
+| Linux Agent | Ubuntu 20.04 | 10.0.0.4 | 2GB | 2 core | Endpoint (Auditd + Atomic RT) |
+| Kali Attacker | Kali Linux | 10.0.0.x | 4GB | 2 core | Attack simulation |
 
 ---
 
