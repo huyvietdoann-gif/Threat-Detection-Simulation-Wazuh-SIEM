@@ -108,6 +108,7 @@ Invoke-AtomicTest T1053.005 -TestNumbers 1
 ![Services Status](../screenshots/phase5/image-11.png)
 **Expected alert:** Rule `100004` – Scheduled Task Created (Level 10)
 **MITRE:** T1053.005 – Scheduled Task/Job
+
 ![Services Status](../screenshots/phase5/image-10.png)
 
 ---
@@ -117,11 +118,16 @@ Invoke-AtomicTest T1053.005 -TestNumbers 1
 > Performed on: **Windows 10**
 
 ```powershell
-Invoke-AtomicTest T1003.001 -TestNumbers 1
+# Direct registry dump using reg.exe
+reg save HKLM\SAM C:\temp\sam.hive /y
+reg save HKLM\SYSTEM C:\temp\system.hive /y
 ```
+![Services Status](../screenshots/phase5/image-17.png)
+**Wazuh detection:**
+- Rule 92026 – Reg.exe used to dump SAM hive (Level 14)
+- MITRE: T1003 – OS Credential Dumping
 
-**Expected alert:** Rule `100003` – Mimikatz / Credential Dumping (Level 15)
-**MITRE:** T1003 – OS Credential Dumping
+![Services Status](../screenshots/phase5/image-18.png)
 
 ---
 
