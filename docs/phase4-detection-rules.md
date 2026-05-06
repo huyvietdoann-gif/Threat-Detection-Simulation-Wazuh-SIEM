@@ -246,3 +246,4 @@ Expected: Rule `100001` fires after 5th attempt.
 | 100004 | Scheduled Task Persistence | T1053.005 | Persistence |
 | 100005 | Linux Sudo Escalation | T1548.003 | Privilege Escalation |
 
+> **Note:** During simulation (Phase 5), some detections were triggered by built-in Wazuh rules (5763, 92026, 92031, 5402) instead of custom rules, as built-in rules matched the attack patterns first.

@@ -123,6 +123,7 @@ reg save HKLM\SAM C:\temp\sam.hive /y
 reg save HKLM\SYSTEM C:\temp\system.hive /y
 ```
 ![Services Status](../screenshots/phase5/image-17.png)
+
 **Wazuh detection:**
 - Rule 92026 – Reg.exe used to dump SAM hive (Level 14)
 - MITRE: T1003 – OS Credential Dumping
@@ -182,13 +183,12 @@ After each test, clean up artifacts to keep the environment clean:
 
 ```powershell
 # Windows – cleanup specific technique
-Invoke-AtomicTest T1053.005 -Cleanup
-Invoke-AtomicTest T1059.001 -Cleanup
+Invoke-AtomicTest T1053.005 -TestNumbers 1 -Cleanup
+Invoke-AtomicTest T1059.001 -TestNumbers 17 -Cleanup
+Remove-Item C:\temp -Recurse -Force
 
-# Cleanup all
-Invoke-AtomicTest All -Cleanup
 ```
-
+![Services Status](../screenshots/phase5/image-19.png)
 > ⚠️ Running `Invoke-AtomicTest All -Cleanup` may trigger a system restart.
 
 ---
@@ -204,37 +204,24 @@ Invoke-AtomicTest All -Cleanup
 
 | Simulation | MITRE Technique | Wazuh Rule | Level | Detected |
 |---|---|---|---|---|
-| SSH Brute Force | T1110.001 | 100001 | 10 | ✅ |
-| PowerShell Execution | T1059.001 | 100002 | 12 | ✅ |
+| SSH Brute Force | T1110.001 | 5763 | 10 | ✅ |
+| PowerShell Execution | T1059.001 | 92057 | 12 | ✅ |
 | Scheduled Task | T1053.005 | 100004 | 10 | ✅ |
-| Credential Dumping | T1003 | 100003 | 15 | ✅ |
-| Account Discovery | T1087 | Built-in | 3 | ✅ |
-| Sudo Escalation | T1548.003 | 100005 | 8 | ✅ |
-
----
-
-## 5.6 Detection Rate Analysis
-
-```
-Total techniques simulated : 6
-Total alerts generated     : X
-Detection rate             : X / 6 = XX%
-```
-
-> Update the numbers after running all simulations.
+| Credential Dumping | T1003 | 92026 | 14 | ✅ |
+| Account Discovery | T1087 | 92031 | 3 | ✅ |
+| Sudo Escalation | T1548.003 | 5402 | 3 | ✅ |
 
 ---
 
 ## Phase 5 Checklist
 
-- [ ] Atomic Red Team installed on Windows
-- [ ] Atomic Red Team installed on Linux
-- [ ] T1110.001 – SSH Brute Force simulated and detected
-- [ ] T1059.001 – PowerShell Execution simulated and detected
-- [ ] T1053.005 – Scheduled Task simulated and detected
-- [ ] T1003 – Credential Dumping simulated and detected
-- [ ] T1087 – Account Discovery simulated and detected
-- [ ] T1548.003 – Sudo Escalation simulated and detected
-- [ ] All detections verified on Wazuh Dashboard
-- [ ] Cleanup completed on all agents
-- [ ] Detection rate calculated
+- [x] Atomic Red Team installed on Windows
+- [x] Atomic Red Team cloned on Linux (bash execution)
+- [x] T1110.001 – SSH Brute Force simulated and detected (Rule 5763, Level 10)
+- [x] T1059.001 – PowerShell Execution simulated and detected (Rule 92057, Level 12)
+- [x] T1053.005 – Scheduled Task simulated and detected (Rule 100004, Level 10)
+- [x] T1003 – Credential Dumping simulated and detected (Rule 92026, Level 14)
+- [x] T1087 – Account Discovery simulated and detected (Rule 92031, Level 3)
+- [x] T1548.003 – Sudo Escalation simulated and detected (Rule 5402, Level 3)
+- [x] All detections verified on Wazuh Dashboard
+- [x] Cleanup completed on all agents
