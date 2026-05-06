@@ -64,7 +64,7 @@ This project builds a small-scale SOC environment designed for hands-on practice
 
 Network: 10.0.0.0/24 (Internal Lab Network)
 ```
-![Services Status](../screenshots/image.png)
+![Lab Architecture](screenshots/image.png)
 
 ### VM Specifications
 
