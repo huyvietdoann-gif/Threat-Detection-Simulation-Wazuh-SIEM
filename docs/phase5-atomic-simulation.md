@@ -213,6 +213,14 @@ Remove-Item C:\temp -Recurse -Force
 
 ---
 
+## 5.6 Detection Rate Analysis
+
+Total techniques simulated : 6
+Total alerts generated     : 6
+Detection rate             : 6/6 = 100%
+
+---
+
 ## Phase 5 Checklist
 
 - [x] Atomic Red Team installed on Windows

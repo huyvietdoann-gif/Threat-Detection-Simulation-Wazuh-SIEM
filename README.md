@@ -64,7 +64,7 @@ This project builds a small-scale SOC environment designed for hands-on practice
 
 Network: 10.0.0.0/24 (Internal Lab Network)
 ```
-![alt text](image.png)
+![Services Status](../screenshots/image.png)
 
 ### VM Specifications
 
@@ -116,19 +116,8 @@ mini-soc-lab/
 
 | Tactic | Technique | Atomic Test | Detection Rule |
 |---|---|---|---|
-| Credential Access | T1003 – OS Credential Dumping | ✅ | ⏳ |
-| Execution | T1059.001 – PowerShell | ✅ | ⏳ |
-| Credential Access | T1110.001 – Password Brute Force | ✅ | ⏳ |
-| Persistence | T1053.005 – Scheduled Task | ✅ | ⏳ |
-| Defense Evasion | T1055 – Process Injection | ✅ | ⏳ |
-
----
-
-## 👤 Author
-
-**Huy** – Cybersecurity Student, Year 4  
-Focus: SOC, SIEM, Threat Detection, Blue Team
-
----
-
-*This project is for educational and portfolio purposes only. All attack simulations are performed in an isolated lab environment.*
+| Credential Access | T1003 – OS Credential Dumping | ✅ | ✅ |
+| Execution | T1059.001 – PowerShell | ✅ | ✅ |
+| Credential Access | T1110.001 – Password Brute Force | ✅ | ✅ |
+| Persistence | T1053.005 – Scheduled Task | ✅ | ✅ |
+| Defense Evasion | T1055 – Process Injection | ✅ | ✅ |
